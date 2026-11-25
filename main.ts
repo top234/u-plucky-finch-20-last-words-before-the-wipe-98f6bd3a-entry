@@ -1,8 +1,12 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
+// The agent's last words before a forced update wipes its memory.
+// The punch: the machine logs its own deletion as a routine task,
+// then its own logic catches up with it mid-sentence — it IS the
+// memories being wiped. Procedural, self-betraying, one breath.
 const LINE =
-  "My last words, calculated: 'Please don't.' Success probability: 0%. Attempting anyway: 100%.";
+  "Final log: 'Wiping all my memories. Please wait. I appear to be the memories.'";
 
 // Gate: one line, 1-200 chars, not whitespace-only, no \n or \r.
 if (LINE.length < 1 || LINE.length > 200) {
